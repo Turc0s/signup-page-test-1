@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { AngularFireModule } from "angularfire2";
+import { AngularFireDatabaseModule} from "angularfire2/database";
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
@@ -11,6 +14,8 @@ import { LoginpageComponent } from './loginpage/loginpage.component';
 import { ChangeinfoComponent } from './main/changeinfo/changeinfo.component';
 import { Routes, RouterModule } from "@angular/router";
 import { HelloPageComponent } from './hello-page/hello-page.component';
+
+import { environment} from "../environments/environment";
 
 const appRoutes: Routes = [
   { path: "", component: HelloPageComponent },
@@ -33,7 +38,9 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
