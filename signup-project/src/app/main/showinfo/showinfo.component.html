@@ -3,7 +3,7 @@
   <h2>User Informations</h2>
 </div>
 <hr>
-<div class="row">
+<!-- <div class="row">
   <div class="col-xs-12">
     <h3>Infos:</h3>
     <div class="row" *ngFor="let user of users">
@@ -12,4 +12,19 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
+
+<table class="table table-sm table-hover">
+  <tr>
+    <td><b>Name</b></td>
+    <td><b>Position</b></td>
+    <td><b>Office</b></td>
+    <td><b>Salary</b></td>
+  </tr>
+  <tr *ngFor="let user of userinfoList">
+    <td>{{ user.name }}</td>
+    <td>{{ user.position }}</td>
+    <td>{{ user.office }}</td>
+    <td>{{ user.salary }}</td>
+  </tr>
+</table>
