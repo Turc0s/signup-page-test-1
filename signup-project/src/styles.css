@@ -6,3 +6,11 @@
 .red-border {
     border:red 1px solid;
 }
+
+input.ng-invalid.ng-dirty {
+    border:red 1px solid;
+}
+
+button:hover, a.btn:hover {
+    cursor: pointer;
+}
