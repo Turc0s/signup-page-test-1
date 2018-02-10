@@ -1,3 +1,10 @@
-<p>
-  showinfo works!
-</p>
+<div class="row">
+  <div class="col-xs-12">
+    <h3>Infos:</h3>
+    <div class="row" *ngFor="let user of users">
+      <div class="col-xs-12">
+        <p>{{ user.firstName }} {{ user.lastName }} {{ user.userName }} {{ user.email }} {{ user.password }} </p>
+      </div>
+    </div>
+  </div>
+</div>

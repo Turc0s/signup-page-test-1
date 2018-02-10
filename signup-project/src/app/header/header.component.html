@@ -1,3 +1,19 @@
-<p>
-  header works!
-</p>
+<!-- <h2>This is a header</h2> -->
+
+<!-- Static navbar -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Signup</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li 
+        routerLinkActive="active" 
+        [routerLinkActiveOptions]="{exact: true}"><a routerLink="/loginpage">Login</a></li>
+        <li routerLinkActive="active"><a routerLink="signup">SignUp</a></li>
+        <li routerLinkActive="active"><a routerLink="main">Main</a></li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container-fluid -->
+</nav>
