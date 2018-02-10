@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../shared/user.model';
 
+import { UserService } from "../../shared/user.service";
+
 @Component({
   selector: 'app-showinfo',
   templateUrl: './showinfo.component.html',
@@ -15,7 +17,7 @@ export class ShowinfoComponent implements OnInit {
     new User("Tapio", "Mattila", "Turc", "test@gmail.com")
   ];
 
-  constructor() { }
+  constructor(private _userService: UserService) { }
 
   ngOnInit() {
   }
