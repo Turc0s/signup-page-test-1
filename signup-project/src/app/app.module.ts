@@ -16,6 +16,8 @@ import { ChangeinfoComponent } from './main/changeinfo/changeinfo.component';
 import { Routes, RouterModule } from "@angular/router";
 import { HelloPageComponent } from './hello-page/hello-page.component';
 
+import { ToastrModule, ToastrService } from "ngx-toastr";
+
 import { environment} from "../environments/environment";
 
 const appRoutes: Routes = [
@@ -42,9 +44,10 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
-    FormsModule
+    FormsModule,
+    ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [ToastrService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

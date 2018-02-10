@@ -3,7 +3,7 @@
   <h2>User Form</h2>
 </div>
 <hr>
-<form #userinfoForm="ngForm" (ngSubmit)="onSubmit()">
+<form #userinfoForm="ngForm" (ngSubmit)="onSubmit(userinfoForm)">
   <div class="form-group">
     <label>Name</label>
     <input 
