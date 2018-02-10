@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+
 import { User } from '../../shared/user.model';
-
 import { UserInfo } from "./../../shared/user-info.model";
-
 import { UserService } from "../../shared/user.service";
+import { ToastrService } from "ngx-toastr";
 
 @Component({
   selector: 'app-showinfo',
@@ -21,7 +21,8 @@ export class ShowinfoComponent implements OnInit {
 
   userinfoList: UserInfo[];
 
-  constructor(private _userService: UserService) { }
+  constructor(private _userService: UserService,
+                private _toastrService: ToastrService) { }
 
   ngOnInit() {
     var listItem = this._userService.getData();
@@ -33,6 +34,18 @@ export class ShowinfoComponent implements OnInit {
         this.userinfoList.push(storageData as UserInfo);
       });
     });
+  }
+
+  onEdit(user: UserInfo) {
+    // this._userService.selectedUser = user;
+    this._userService.selectedUser = Object.assign({}, user);
+  }
+
+  onDelete(key: string) {
+    if(confirm("Are you sure to delete this record ?") == true) {
+      this._userService.deleteUserInfo(key);
+      this._toastrService.warning("Deleted Successfully", "User Info")
+    }
   }
 
 }

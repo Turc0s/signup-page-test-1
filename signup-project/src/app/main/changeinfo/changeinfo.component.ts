@@ -21,10 +21,12 @@ export class ChangeinfoComponent implements OnInit {
   }
 
   onSubmit(userinfoForm: NgForm) {
-    this._userService.insertUserInfo(userinfoForm.value);
+    if(userinfoForm.value.$key == null)
+      this._userService.insertUserInfo(userinfoForm.value);
+    else
+      this._userService.updateUserInfo(userinfoForm.value);
     this.resetForm();
     this._toastrService.success("Submitted Successfully", "User Info");
-
   }
 
   resetForm(userinfoForm?: NgForm) {

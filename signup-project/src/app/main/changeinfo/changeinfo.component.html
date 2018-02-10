@@ -4,6 +4,9 @@
 </div>
 <hr>
 <form #userinfoForm="ngForm" (ngSubmit)="onSubmit(userinfoForm)">
+  <input 
+  type="hidden"
+  name="$key" #$key="ngModel" [(ngModel)]="_userService.selectedUser.$key">
   <div class="form-group">
     <label>Name</label>
     <input 
@@ -49,10 +52,10 @@
     placeholder="Salary">
     </div>
   </div>
-  <button class="btn btn-default" type="submit" [disabled]="!userinfoForm.valid">
+  <button class="btn btn-success" type="submit" [disabled]="!userinfoForm.valid">
     <i class="fa fa-floppy-o"></i>
     Submit</button>
-  <button class="btn btn-default" type="button" (click)="resetForm()">
+  <button class="btn btn-warning" type="button" (click)="resetForm()">
     <i class="fa fa-repeat"></i>
     Reset</button>
 </form>

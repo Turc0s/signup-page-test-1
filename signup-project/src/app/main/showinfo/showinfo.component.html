@@ -26,5 +26,11 @@
     <td>{{ user.position }}</td>
     <td>{{ user.office }}</td>
     <td>{{ user.salary }}</td>
+    <a class="btn">
+      <i class="fa fa-pencil-square-o" (click)="onEdit(user)"></i>
+    </a>
+    <a class="btn">
+        <i class="fa fa-trash-o" (click)="onDelete(user.$key)"></i>
+      </a>
   </tr>
 </table>
