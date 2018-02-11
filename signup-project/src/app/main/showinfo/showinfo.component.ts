@@ -12,13 +12,6 @@ import { ToastrService } from "ngx-toastr";
 })
 export class ShowinfoComponent implements OnInit {
 
-  users: User[] = [
-    new User("Tapio", "Mattila", "Turc", "test@gmail.com"),
-    new User("Tapio", "Mattila", "Turc", "test@gmail.com"),
-    new User("Tapio", "Mattila", "Turc", "test@gmail.com"),
-    new User("Tapio", "Mattila", "Turc", "test@gmail.com")
-  ];
-
   userinfoList: UserInfo[];
 
   constructor(private _userService: UserService,

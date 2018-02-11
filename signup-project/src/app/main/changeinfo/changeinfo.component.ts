@@ -26,7 +26,9 @@ export class ChangeinfoComponent implements OnInit {
     else
       this._userService.updateUserInfo(userinfoForm.value);
     this.resetForm();
+    
     this._toastrService.success("Submitted Successfully", "User Info");
+    userinfoForm.reset();
   }
 
   resetForm(userinfoForm?: NgForm) {
