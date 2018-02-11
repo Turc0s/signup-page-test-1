@@ -19,12 +19,15 @@ import { HelloPageComponent } from './hello-page/hello-page.component';
 import { ToastrModule, ToastrService } from "ngx-toastr";
 
 import { environment} from "../environments/environment";
+import { RegUsersComponent } from './reg-users/reg-users.component';
+import { RegUserService } from './shared/reg-user.service';
 
 const appRoutes: Routes = [
   { path: "", component: HelloPageComponent },
   { path: "loginpage", component: LoginpageComponent },
   { path: "main", component: MainComponent },
-  { path: "signup", component: SignupPageComponent }
+  { path: "signup", component: SignupPageComponent },
+  { path: "registeredusers", component: RegUsersComponent }
 ];
 
 @NgModule({
@@ -38,6 +41,7 @@ const appRoutes: Routes = [
     LoginpageComponent,
     ChangeinfoComponent,
     HelloPageComponent,
+    RegUsersComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,7 @@ const appRoutes: Routes = [
     FormsModule,
     ToastrModule.forRoot()
   ],
-  providers: [ToastrService],
+  providers: [ToastrService, RegUserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
