@@ -29,17 +29,8 @@ export class RegUserService implements OnInit {
           email: regUser.email
         });
       }
-
-    //   insertUserInfo(userinfo: UserInfo) {
-    //     this.userinfoList.push({
-    //       name: userinfo.name,
-    //       position: userinfo.position,
-    //       office: userinfo.office,
-    //       salary: userinfo.salary
-    //     });
-    //   }
     
-      updateUserInfo(regUser: RegUser) {
+      updateRegUserInfo(regUser: RegUser) {
         this.regUserList.update(regUser.$key, {
             fname: regUser.fname,
             lname: regUser.lname,
@@ -48,7 +39,7 @@ export class RegUserService implements OnInit {
           });
       }
     
-      deleteUserInfo($key: string) {
+      deleteRegUserInfo($key: string) {
         this.regUserList.remove($key);
       }
 
