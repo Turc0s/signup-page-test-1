@@ -38,6 +38,29 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 Firebase is used for backend
 ```
 
+```shell
+Shell command:
+
+ng serve
+
+environment.ts
+
+credentials:
+
+export const environment = {
+  production: false,
+  firebaseConfig: {
+    apiKey: "<api key>",
+    authDomain: "app-info-1.firebaseapp.com",
+    databaseURL: "https://app-info-1.firebaseio.com",
+    projectId: "app-info-1",
+    storageBucket: "app-info-1.appspot.com",
+    messagingSenderId: "<message id>"
+  }
+};
+
+```
+
 
 
 
